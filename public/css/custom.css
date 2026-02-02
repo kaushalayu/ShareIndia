@@ -1,0 +1,197 @@
+.logo-header-one{
+    height: 30px;
+    width: 100px;
+}
+.signup{
+    font-size: 20px;
+}
+
+
+
+.package-section {
+  padding: 40px 15px;
+}
+
+.package-wrapper {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+/* IMAGE */
+.package-image {
+  flex: 1;
+}
+
+.package-image img {
+  width: 100%;
+  border-radius: 14px;
+  object-fit: cover;
+}
+
+/* CONTENT */
+.package-content {
+  flex: 1;
+}
+
+.tab-header {
+  display: flex;
+  gap: 35px;
+  border-bottom: 1px solid #eee;
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  padding: 14px 6px;
+  font-size: 15px;
+  cursor: pointer;
+  color: #777;
+  position: relative;
+}
+
+.tab-btn.active {
+  color: #4f46e5;
+  font-weight: 600;
+}
+
+.tab-btn.active::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #4f46e5;
+}
+
+.tab-content {
+  margin-top: 25px;
+}
+
+.tab-panel {
+  display: none;
+}
+
+.tab-panel.active {
+  display: block;
+}
+
+.info-card {
+  max-width: 420px;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.info-card h4 {
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: #4f46e5;
+}
+
+.info-card p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .package-wrapper {
+    flex-direction: column;
+  }
+
+  .tab-header {
+    gap: 20px;
+  }
+
+  .info-card {
+    max-width: 100%;
+  }
+}
+
+/* Navbar Background */
+.custom-navbar {
+  background-color: #0f172a; /* dark blue */
+}
+
+/* Logo visibility */
+.custom-navbar .logo-header img {
+  filter: brightness(1) contrast(1.1);
+}
+
+/* Menu links */
+.custom-navbar .navbar-nav > li > a {
+  color: #ffffff !important;
+  font-weight: 500;
+}
+
+/* Hover / Active */
+.custom-navbar .navbar-nav > li > a:hover {
+  color: #38bdf8 !important;
+}
+
+/* Signup/Login */
+.custom-navbar .signup {
+  color: #ffffff;
+}
+
+/* Mobile toggle bars */
+.custom-navbar .icon-bar {
+  background-color: #ffffff;
+}
+/* === FIX HEADER STYLE-2 ISSUE === */
+
+/* Remove fancy white shape */
+.header-style-2::before,
+.header-style-2::after {
+  display: none !important;
+}
+
+/* Make header solid */
+.site-header {
+  background-color: #0f172a !important;
+}
+
+/* Navbar inner bar */
+.site-header .main-bar {
+  background-color: #0f172a !important;
+  border-radius: 0 !important;
+}
+
+/* Logo alignment fix */
+.logo-header {
+  background: transparent !important;
+}
+
+/* Menu text */
+.site-header .navbar-nav > li > a {
+  color: #ffffff !important;
+}
+
+/* Hover */
+.site-header .navbar-nav > li > a:hover {
+  color: #38bdf8 !important;
+}
+
+/* Mobile menu icon */
+.site-header .icon-bar {
+  background-color: #ffffff !important;
+}
+@media (max-width: 991px) {
+  .header-style-2,
+  .header-style-2 .main-bar,
+  .header-style-2 .header-nav {
+    background-color: #0f172a !important;
+  }
+}
+
+.custom-css{
+  color: white;
+}
+.site-text-yellow a{
+  color: yellow;
+}
