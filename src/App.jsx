@@ -15,6 +15,7 @@ import Faq from './Pages/Faq'
 import BlogDetails from './Pages/BlogDetails'
 import OfferDetail from './Pages/OfferDetail'
 import TourDetail from './Pages/TourDetail'
+import DestinationDetails from './Pages/DestinationDetails'
 
 function App() {
 
@@ -35,6 +36,7 @@ function App() {
         <Route path='/blog-detail' element={<BlogDetails />} />
         <Route path='/offer-detail' element={<OfferDetail />} />
         <Route path='/tour-detail' element={<TourDetail />} />
+        <Route path='/destination-detail' element={<DestinationDetails />} />
       </Routes>
       <Footer />
     </>

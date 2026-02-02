@@ -13,13 +13,13 @@ function TourDetail() {
                     <div className="wt-bnr-inr-entry">
                         <div className="banner-title-outer">
                             <div className="banner-title-name">
-                                <h2 className="wt-title">Detination Detail</h2>
+                                <h2 className="wt-title">Tour Detail</h2>
                             </div>
 
                             <div>
                                 <ul className="wt-breadcrumb breadcrumb-style-2">
                                     <li><a href="index.html">Home</a></li>
-                                    <li>Detination Detail</li>
+                                    <li>Tour Detail</li>
                                 </ul>
                             </div>
                         </div>
