@@ -141,8 +141,8 @@ export default function Footer() {
                                 <div className="widget widget_services">
                                     <h3 className="widget-title">Legal</h3>
                                     <ul>
-                                        <li><Link to="/about">Terms & Condition</Link></li>
-                                        <li><Link to="/about">Privacy Policy</Link></li>
+                                        <li><Link to="/legal">Terms & Condition</Link></li>
+                                        <li><Link to="/legal">Privacy Policy</Link></li>
                                         <li><Link to="/contact">Contact</Link></li>
                                         <li><Link to="/about">Careers</Link></li>
                                         <li><Link to="/faq">Help</Link></li>

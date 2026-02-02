@@ -2608,7 +2608,7 @@ const Home = () => {
         >
           <div className="circle-text2">
             <div className="emblem-wrap">
-              <div className="emblem">Want-to-see-our-top-destinations-</div>
+              <div className="emblem" data-text="Want-to-see-our-top-destinations-">Want-to-see-our-top-destinations-</div>
               <i>
                 <img src="/images/advanture-st1.png" alt="In Circle Pic" />
               </i>

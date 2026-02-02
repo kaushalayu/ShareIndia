@@ -1330,91 +1330,94 @@ All JavaScript fuctions Start
 	/*--------------------------------------------------------------------------------------------
 	document.ready ALL FUNCTION START
 	---------------------------------------------------------------------------------------------*/
-	jQuery(document).ready(function () {
+	window.shareIndiaInit = function () {
 		// > Top Search bar Show Hide function by = custom.js  		
-		site_search(),
-			// > Video responsive function by = custom.js 
-			video_responsive(),
-			// Category function by = owl.js **********//
-			twm_category_carousal(),
-			//  Blog List function by = swiper-bundle.min.js ========================== //
-			twm_blog_list_carousal(),
-			//  Detail Slider function by = swiper-bundle.min.js ========================== //
-			trv_d_slider(),
-			// Category function by = owl.js **********//
-			twm_category_carousal_2(),
-			// Category function by = owl.js **********//
-			trv_holi_theme_carousel(),
-			// > LIGHTBOX Gallery Popup function	by = lc_lightbox.lite.js =========================== //      
-			lightbox_popup(),
-			// > magnificPopup for video function	by = magnific-popup.js
-			magnific_video(),
-			// > Vertically center Bootstrap modal popup function by = custom.js
-			popup_vertical_center();
+		site_search();
+		// > Video responsive function by = custom.js 
+		video_responsive();
+		// Category function by = owl.js **********//
+		twm_category_carousal();
+		//  Blog List function by = swiper-bundle.min.js ========================== //
+		twm_blog_list_carousal();
+		//  Detail Slider function by = swiper-bundle.min.js ========================== //
+		trv_d_slider();
+		// Category function by = owl.js **********//
+		twm_category_carousal_2();
+		// Category function by = owl.js **********//
+		trv_holi_theme_carousel();
+		// > LIGHTBOX Gallery Popup function	by = lc_lightbox.lite.js =========================== //      
+		lightbox_popup();
+		// > magnificPopup for video function	by = magnific-popup.js
+		magnific_video();
+		// > Vertically center Bootstrap modal popup function by = custom.js
+		popup_vertical_center();
 		// > Sidebar sticky  when scroll down function by = theia-sticky-sidebar.js ========== //		
-		sticky_sidebar(),
-			// > page scroll top on button click function by = custom.js	
-			scroll_top(),
-			//  Home Banner Slider function by = swiper-bundle.min.js ========================== //
-			trv_hp4_slider(),
-			//  Home Banner Slider function by = swiper-bundle.min.js ========================== //
-			trv_hp5_slider(),
-			//  Home Ad Slider function by = swiper-bundle.min.js ========================== //
-			trv_ad_slider(),
-			// > input type file function by = custom.js	 	
-			input_type_file_form(),
-			// > input Placeholder in IE9 function by = custom.js		
-			placeholderSupport(),
-			// > accordion active calss function by = custom.js ========================= //			
-			accordion_active(),
-			// > Nav submenu on off function by = custome.js ===================//
-			mobile_nav(),
-			// Mobile side drawer function by = custom.js
-			mobile_side_drawer(),
-			//  Client logo Carousel function by = owl.carousel.js ========================== //
-			home_client_carousel(),
-			//  Popular search list function by = owl.carousel.js ========================== //
-			tvr_pop_search_carousel(),
-			//  Popular Destination style 1 Carousel function by = swiper-bundle.min.js ========================== //
-			trv_pop_des_st1_carousal(),
-			//  Testimonial Carousel function by = swiper-bundle.min.js ========================== //
-			trv_tsmo_banner_carousal(),
-			//  Rate Review function by = swiper-bundle.min.js ========================== //
-			trv_rate_review_carousal(),
-			//  Latest Blog Style 21 Carousel function by = swiper-bundle.min.js ========================== //
-			trv_lat_blog_st2_carousal(),
-			//  Explore Tours Guide Carousel function by = swiper-bundle.min.js ========================== //
-			trv_tour_guide_carousal(),
-			//  Explore Tours style 1 Carousel function by = swiper-bundle.min.js ========================== //
-			trv_tours_st1_carousal(),
-			//  Explore Tours style 2 Carousel function by = swiper-bundle.min.js ========================== //
-			trv_tours_st2_carousal(),
-			//  Explore Tours style 3 Carousel function by = swiper-bundle.min.js ========================== //
-			trv_tours_st3_carousal(),
-			//  Most Favorite Tour function by = swiper-bundle.min.js ========================== //
-			trv_mf_tour_carousal(),
-			//------ Tour Category Slider Start ------------//
-			trv_tour_cat_carousal(),
-			//  date time function = bootstrap-datetimepicker.min.js________//
-			date_time_input(),
-			//  Price Range Slider function by = bootstrap-slider.min.js ========================== //
-			shop_product_price(),
-			//  Testimonial Carousel function by = swiper-bundle.min.js ========================== //
-			trv_t_monial_carousal(),
-			//  Tour Detail Gallery Carousel function by = swiper-bundle.min.js ========================== //
-			trv_inr_gallery_carousal(),
-			// > TouchSpin box function by  = jquery.bootstrap-touchspin.js =============== // 
-			input_number_vertical_form(),
-			//  Counter Section function by = counterup.min.js ========================== //
-			counter_section(),
-			// > Testimonial Thumb SLider Full Screen with no margin function by = swiper-bundle.min.js ========================== //
-			trv_testi_slider(),
-			//-------- ACDion Function ------------//
-			//  Cursor Section Start function by = gsap.min.js **********//
-			Cursor_section(),
-			/*Banner Home 1 Rain Effect Function Start*/
-			tvr_rain_effetct_function()
+		sticky_sidebar();
+		// > page scroll top on button click function by = custom.js	
+		scroll_top();
+		//  Home Banner Slider function by = swiper-bundle.min.js ========================== //
+		trv_hp4_slider();
+		//  Home Banner Slider function by = swiper-bundle.min.js ========================== //
+		trv_hp5_slider();
+		//  Home Ad Slider function by = swiper-bundle.min.js ========================== //
+		trv_ad_slider();
+		// > input type file function by = custom.js	 	
+		input_type_file_form();
+		// > input Placeholder in IE9 function by = custom.js		
+		placeholderSupport();
+		// > accordion active calss function by = custom.js ========================= //			
+		accordion_active();
+		// > Nav submenu on off function by = custome.js ===================//
+		mobile_nav();
+		// Mobile side drawer function by = custom.js
+		mobile_side_drawer();
+		//  Client logo Carousel function by = owl.carousel.js ========================== //
+		home_client_carousel();
+		//  Popular search list function by = owl.carousel.js ========================== //
+		tvr_pop_search_carousel();
+		//  Popular Destination style 1 Carousel function by = swiper-bundle.min.js ========================== //
+		trv_pop_des_st1_carousal();
+		//  Testimonial Carousel function by = swiper-bundle.min.js ========================== //
+		trv_tsmo_banner_carousal();
+		//  Rate Review function by = swiper-bundle.min.js ========================== //
+		trv_rate_review_carousal();
+		//  Latest Blog Style 21 Carousel function by = swiper-bundle.min.js ========================== //
+		trv_lat_blog_st2_carousal();
+		//  Explore Tours Guide Carousel function by = swiper-bundle.min.js ========================== //
+		trv_tour_guide_carousal();
+		//  Explore Tours style 1 Carousel function by = swiper-bundle.min.js ========================== //
+		trv_tours_st1_carousal();
+		//  Explore Tours style 2 Carousel function by = swiper-bundle.min.js ========================== //
+		trv_tours_st2_carousal();
+		//  Explore Tours style 3 Carousel function by = swiper-bundle.min.js ========================== //
+		trv_tours_st3_carousal();
+		//  Most Favorite Tour function by = swiper-bundle.min.js ========================== //
+		trv_mf_tour_carousal();
+		//------ Tour Category Slider Start ------------//
+		trv_tour_cat_carousal();
+		//  date time function = bootstrap-datetimepicker.min.js________//
+		date_time_input();
+		//  Price Range Slider function by = bootstrap-slider.min.js ========================== //
+		shop_product_price();
+		//  Testimonial Carousel function by = swiper-bundle.min.js ========================== //
+		trv_t_monial_carousal();
+		//  Tour Detail Gallery Carousel function by = swiper-bundle.min.js ========================== //
+		trv_inr_gallery_carousal();
+		// > TouchSpin box function by  = jquery.bootstrap-touchspin.js =============== // 
+		input_number_vertical_form();
+		//  Counter Section function by = counterup.min.js ========================== //
+		counter_section();
+		// > Testimonial Thumb SLider Full Screen with no margin function by = swiper-bundle.min.js ========================== //
+		trv_testi_slider();
+		//-------- ACDion Function ------------//
+		//  Cursor Section Start function by = gsap.min.js **********//
+		Cursor_section();
+		/*Banner Home 1 Rain Effect Function Start*/
+		tvr_rain_effetct_function();
+	};
 
+	jQuery(document).ready(function () {
+		window.shareIndiaInit();
 	});
 
 	/*--------------------------------------------------------------------------------------------

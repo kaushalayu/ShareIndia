@@ -114,9 +114,9 @@ This files [Table of contents] are outlined below
 /** - Search Style 2 */
 /** - Bootstrap Select CSS */
 /* ---------------------------------------------------*/
-@import url("https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&amp;display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&amp;display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&amp;display=swap");
 
 /*===GENERAL===*/
 .site-text-primary {
@@ -11037,6 +11037,7 @@ select {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+
 }
 
 @media (max-width: 1365px) {
@@ -13578,7 +13579,7 @@ select {
   padding: 0px 30px;
   font-weight: 400;
   color: #fff;
-  text-shadow: 2px 5px 0px rgba(0, 0, 0, 0.72);
+  text-shadow: 2px 5px 0px rgba(255, 255, 255, 0.72);
   line-height: 1;
   margin-bottom: 0px;
 }
@@ -13587,14 +13588,14 @@ select {
   .trv-adventure-st1 .adventure-title {
     margin-top: 30px;
     font-size: 120px;
-    text-shadow: 2px 3px 0px rgba(0, 0, 0, 0.72);
+    text-shadow: 2px 3px 0px rgba(255, 255, 255, 0.72);
   }
 }
 
 @media (max-width: 768px) {
   .trv-adventure-st1 .adventure-title {
     font-size: 80px;
-    text-shadow: 2px 0px 0px rgba(0, 0, 0, 0.72);
+    text-shadow: 2px 0px 0px rgba(255, 255, 255, 0.72);
   }
 }
 
@@ -17955,6 +17956,7 @@ select {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+
 }
 
 @media (max-width: 1600px) {
