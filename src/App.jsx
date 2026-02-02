@@ -21,6 +21,7 @@ const TourDetail = lazy(() => import('./Pages/TourDetail'))
 const DestinationDetails = lazy(() => import('./Pages/DestinationDetails'))
 const Legal = lazy(() => import('./Pages/Legal'))
 const Signup = lazy(() => import('./Pages/Signup'))
+const Team = lazy(() => import('./Pages/Team'))
 
 function App() {
   const location = useLocation();
@@ -57,6 +58,7 @@ function App() {
           <Route path='/destination-detail' element={<DestinationDetails />} />
           <Route path='/legal' element={<Legal />} />
           <Route path='/signup' element={<Signup />} />
+          <Route path='/our-team' element={<Team />} />
         </Routes>
       </Suspense>
       <Footer />
