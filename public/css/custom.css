@@ -1,9 +1,14 @@
-.logo-header-one{
-    height: 30px;
-    width: 100px;
+.logo-header-one {
+  height: auto;
+  max-height: 45px;
+  width: auto;
+  max-width: 160px;
+  display: flex;
+  align-items: center;
 }
-.signup{
-    font-size: 20px;
+
+.signup {
+  font-size: 20px;
 }
 
 
@@ -115,7 +120,8 @@
 
 /* Navbar Background */
 .custom-navbar {
-  background-color: #0f172a; /* dark blue */
+  background-color: #0f172a;
+  /* dark blue */
 }
 
 /* Logo visibility */
@@ -124,13 +130,13 @@
 }
 
 /* Menu links */
-.custom-navbar .navbar-nav > li > a {
+.custom-navbar .navbar-nav>li>a {
   color: #ffffff !important;
   font-weight: 500;
 }
 
 /* Hover / Active */
-.custom-navbar .navbar-nav > li > a:hover {
+.custom-navbar .navbar-nav>li>a:hover {
   color: #38bdf8 !important;
 }
 
@@ -143,6 +149,7 @@
 .custom-navbar .icon-bar {
   background-color: #ffffff;
 }
+
 /* === FIX HEADER STYLE-2 ISSUE === */
 
 /* Remove fancy white shape */
@@ -168,12 +175,12 @@
 }
 
 /* Menu text */
-.site-header .navbar-nav > li > a {
+.site-header .navbar-nav>li>a {
   color: #ffffff !important;
 }
 
 /* Hover */
-.site-header .navbar-nav > li > a:hover {
+.site-header .navbar-nav>li>a:hover {
   color: #38bdf8 !important;
 }
 
@@ -181,7 +188,9 @@
 .site-header .icon-bar {
   background-color: #ffffff !important;
 }
+
 @media (max-width: 991px) {
+
   .header-style-2,
   .header-style-2 .main-bar,
   .header-style-2 .header-nav {
@@ -189,9 +198,33 @@
   }
 }
 
-.custom-css{
+.custom-css {
   color: white;
 }
-.site-text-yellow a{
+
+.site-text-yellow a {
   color: yellow;
+}
+
+/* Sidebar Toggle State Fixes */
+.xs-sidebar-group.info-group.is-open,
+.xs-sidebar-group.info-group.isActive {
+  visibility: visible;
+  opacity: 1;
+}
+
+.xs-sidebar-group.info-group.is-open .xs-overlay,
+.xs-sidebar-group.info-group.isActive .xs-overlay {
+  visibility: visible;
+  opacity: 0.7;
+}
+
+.xs-sidebar-group.info-group.is-open .xs-sidebar-widget,
+.xs-sidebar-group.info-group.isActive .xs-sidebar-widget {
+  right: 0 !important;
+}
+
+/* Mobile Nav Toggle visibility */
+.navbar-toggler .icon-bar {
+  background-color: #fff !important;
 }

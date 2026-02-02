@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import Navbar from './Components/Navbar'
 import Footer from './Components/footer'
+import ScrollToTop from './Components/ScrollToTop'
 import { Routes, Route } from 'react-router-dom'
 import Home from './Pages/Home'
 import About from './Pages/About'
@@ -17,6 +18,7 @@ function App() {
 
   return (
     <>
+      <ScrollToTop />
       <Navbar />
       <Routes>
         <Route path='/' element={<Home />} />

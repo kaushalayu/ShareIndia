@@ -1,39 +1,20 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
-export default function Navbar() {
-    const [menuOpen, setMenuOpen] = useState(false);
-    const [sidebarOpen, setSidebarOpen] = useState(false);
-
+const Navbar = () => {
     return (
         <>
-            {/* LOADING AREA */}
-            <div className="loading-area">
-                <div className="loading-box"></div>
-                <div className="loading-pic">
-                    <figure className="loader">
-                        <div className="dot white"></div>
-                        <div className="dot"></div>
-                        <div className="dot"></div>
-                        <div className="dot"></div>
-                        <div className="dot"></div>
-                    </figure>
-                </div>
-            </div>
-
-            {/* Cursor */}
-            <div className="cursor"></div>
-            <div className="cursor2"></div>
-
-            {/* HEADER */}
+            {/* HEADER START */}
             <header className="sticky-header site-header header-style-1 mobile-sider-drawer-menu">
                 <div className="main-bar-wraper navbar-expand-lg">
                     <div className="main-bar">
-
-                        {/* MOBILE TOGGLE */}
+                        {/* NAV Toggle Button */}
                         <button
-                            className={`navbar-toggler ${menuOpen ? "" : "collapsed"}`}
-                            onClick={() => setMenuOpen(!menuOpen)}
+                            id="mobile-side-drawer"
+                            data-target=".header-nav"
+                            data-toggle="collapse"
+                            type="button"
+                            className="navbar-toggler collapsed"
                         >
                             <span className="sr-only">Toggle navigation</span>
                             <span className="icon-bar icon-bar-first"></span>
@@ -41,58 +22,78 @@ export default function Navbar() {
                             <span className="icon-bar icon-bar-three"></span>
                         </button>
 
-                        {/* LOGO */}
                         <div className="logo-header">
                             <div className="logo-header-inner logo-header-one">
-                                <Link to="/">
-                                    <img src="/images/ShareLogo.png" alt="Logo" />
+                                <Link href="Home">
+                                    <img src="images/ShareLogo.png" alt="Logo" />
                                 </Link>
                             </div>
                         </div>
 
-                        {/* MAIN NAV */}
-                        <div
-                            className={`nav-animation header-nav navbar-collapse ${menuOpen ? "show" : "collapse"
-                                } d-flex justify-content-end`}
-                        >
+                        {/* MAIN Vav */}
+                        <div className="nav-animation header-nav navbar-collapse collapse d-flex justify-content-end">
                             <ul className="nav navbar-nav">
-                                <li><Link to="/" onClick={() => setMenuOpen(false)}>Home</Link></li>
-                                <li><Link to="/about" onClick={() => setMenuOpen(false)}>About</Link></li>
-                                <li><Link to="/gallery" onClick={() => setMenuOpen(false)}>Gallery</Link></li>
-                                <li><Link to="/offer" onClick={() => setMenuOpen(false)}>Offer</Link></li>
-                                <li><Link to="/tour" onClick={() => setMenuOpen(false)}>Tours</Link></li>
-                                <li><Link to="/blog-grid" onClick={() => setMenuOpen(false)}>Blogs</Link></li>
-                                <li><Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link></li>
+                                <li className="has-child">
+                                    <Link to="/">Home</Link>
+                                </li>
+                                <li>
+                                    <Link to="/about">About</Link>
+                                </li>
+                                <li>
+                                    <Link to="/gallery">Gallery</Link>
+                                </li>
+                                <li className="has-child">
+                                    <Link to="/offer">Offer</Link>
+                                </li>
+                                <li className="has-child">
+                                    <Link to="/tour">Tours</Link>
+                                </li>
+                                <li className="has-child">
+                                    <Link to="/blog-grid">Blogs</Link>
+                                </li>
+                                <li>
+                                    <Link to="/contact">Contact</Link>
+                                </li>
                             </ul>
                         </div>
 
-                        {/* RIGHT SECTION */}
+                        {/* Header Right Section*/}
                         <div className="extra-nav header-1-nav">
                             <div className="extra-cell one">
-                                <Link to="/signup" className="header-search-icon">
-                                    <span className="signup">SignUp/Login</span>
-                                </Link>
+                                <div className="header-search">
+                                    <Link to="/signup" className="header-search-icon">
+                                        <span className="signup">SignUp/Login</span>
+                                    </Link>
+                                </div>
                             </div>
-
                             <div className="extra-cell two trv-r-section-block">
-                                <button
-                                    className="navSidebar-button"
-                                    onClick={() => setSidebarOpen(true)}
-                                >
+                                <a href="/#" className="navSidebar-button">
                                     <span className="trv-nev-line1"></span>
                                     <span className="trv-nev-line2"></span>
                                     <span className="trv-nev-line1"></span>
                                     <b className="trv-new-info-btn">Info</b>
-                                </button>
+                                </a>
                             </div>
                         </div>
 
-                        {/* SEARCH */}
+                        {/* SITE Search */}
                         <div id="search">
                             <span className="close-btn">X</span>
-                            <form className="radius-xl">
+                            <form
+                                role="search"
+                                id="searchform"
+                                action=""
+                                method="get"
+                                className="radius-xl"
+                            >
                                 <div className="input-group">
-                                    <input className="form-control" type="search" placeholder="Search..." />
+                                    <input
+                                        className="form-control"
+                                        defaultValue=""
+                                        name="q"
+                                        type="search"
+                                        placeholder="Search..."
+                                    />
                                     <span className="input-group-append">
                                         <button type="button" className="search-btn">
                                             <i className="bi bi-search"></i>
@@ -101,58 +102,80 @@ export default function Navbar() {
                                 </div>
                             </form>
                         </div>
-
                     </div>
                 </div>
-
-                {/* SIDEBAR */}
-                <div className={`xs-sidebar-group info-group ${sidebarOpen ? "is-open" : ""}`}>
-                    <div className="xs-overlay xs-bg-black" onClick={() => setSidebarOpen(false)}></div>
-
+                {/* Sidebar popup Item */}
+                <div className="xs-sidebar-group info-group">
+                    <div className="xs-overlay xs-bg-black"></div>
                     <div className="xs-sidebar-widget">
                         <div className="sidebar-widget-container">
                             <div className="widget-heading">
-                                <button className="close-side-widget" onClick={() => setSidebarOpen(false)}>
+                                <a href="/#" className="close-side-widget">
                                     <i className="bi bi-x-square-fill"></i>
-                                </button>
+                                </a>
                             </div>
 
                             <div className="sidebar-textwidget">
+                                {/* Sidebar Info Content */}
                                 <div className="sidebar-info-contents">
                                     <div className="content-inner">
                                         <div className="content-box">
                                             <div className="trv-side-pnl-info">
                                                 <div className="trv-side-pnl-logo">
-                                                    <img src="/images/ShareLogo.png" alt="Logo" />
+                                                    <img src="images/ShareLogo.png" alt="Image" />
                                                 </div>
-
                                                 <div className="trv-side-pnl-content">
-                                                    <h3 className="trv-sm-title">It’s Time to Traveling</h3>
-                                                    <h3 className="trv-lg-title">Plan Your Next Holiday</h3>
-                                                    <p>
-                                                        SimplyIndiaHolidays is a trusted travel booking agency
-                                                        offering affordable holiday packages across India.
-                                                    </p>
+                                                    <div className="trv-side-pnl-content-mid">
+                                                        <h3 className="trv-sm-title">
+                                                            It’s Time to Traveling
+                                                        </h3>
+                                                        <h3 className="trv-lg-title">
+                                                            Plan Your Next Holiday
+                                                        </h3>
+                                                        <p>
+                                                            SimplyIndiaHolidays is a trusted travel booking
+                                                            agency that helps people explore India with
+                                                            comfort and ease. They offer well-planned holiday
+                                                            packages, hotel bookings, and transportation
+                                                            services at affordable prices.
+                                                        </p>
+                                                    </div>
 
                                                     <ul className="social-icons">
-                                                        <li><a href="#"><i className="bi bi-twitter-x"></i></a></li>
-                                                        <li><a href="#"><i className="bi bi-facebook"></i></a></li>
-                                                        <li><a href="#"><i className="bi bi-instagram"></i></a></li>
-                                                        <li><a href="#"><i className="bi bi-pinterest"></i></a></li>
+                                                        <li>
+                                                            <a href="/#">
+                                                                <i className="bi bi-twitter-x"></i>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/#">
+                                                                <i className="bi bi-facebook"></i>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/#">
+                                                                <i className="bi bi-instagram"></i>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/#">
+                                                                <i className="bi bi-pinterest"></i>
+                                                            </a>
+                                                        </li>
                                                     </ul>
                                                 </div>
-
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
-
+                {/*End Sidebar popup Item */}
             </header>
+            {/* HEADER END */}
         </>
     );
-}
+};
+export default Navbar;

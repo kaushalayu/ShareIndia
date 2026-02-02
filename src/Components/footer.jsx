@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
     return (
@@ -11,55 +12,55 @@ export default function Footer() {
                     <ul className="trv-ftr-insta-gall">
                         <li>
                             <a href="#">
-                                <img src="images/insta-gallery/pic1.jpg" alt="image" />
+                                <img src="/images/insta-gallery/pic1.jpg" alt="image" />
                                 <span><i className="bi bi-instagram"></i></span>
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <img src="images/insta-gallery/pic2.jpg" alt="image" />
+                                <img src="/images/insta-gallery/pic2.jpg" alt="image" />
                                 <span><i className="bi bi-instagram"></i></span>
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <img src="images/insta-gallery/pic3.jpg" alt="image" />
+                                <img src="/images/insta-gallery/pic3.jpg" alt="image" />
                                 <span><i className="bi bi-instagram"></i></span>
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <img src="images/insta-gallery/pic4.jpg" alt="image" />
+                                <img src="/images/insta-gallery/pic4.jpg" alt="image" />
                                 <span><i className="bi bi-instagram"></i></span>
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <img src="images/insta-gallery/pic5.jpg" alt="image" />
+                                <img src="/images/insta-gallery/pic5.jpg" alt="image" />
                                 <span><i className="bi bi-instagram"></i></span>
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <img src="images/insta-gallery/pic6.jpg" alt="image" />
+                                <img src="/images/insta-gallery/pic6.jpg" alt="image" />
                                 <span><i className="bi bi-instagram"></i></span>
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <img src="images/insta-gallery/pic7.jpg" alt="image" />
+                                <img src="/images/insta-gallery/pic7.jpg" alt="image" />
                                 <span><i className="bi bi-instagram"></i></span>
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <img src="images/insta-gallery/pic8.jpg" alt="image" />
+                                <img src="/images/insta-gallery/pic8.jpg" alt="image" />
                                 <span><i className="bi bi-instagram"></i></span>
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <img src="images/insta-gallery/pic9.jpg" alt="image" />
+                                <img src="/images/insta-gallery/pic9.jpg" alt="image" />
                                 <span><i className="bi bi-instagram"></i></span>
                             </a>
                         </li>
@@ -68,18 +69,18 @@ export default function Footer() {
 
                 <div className="marquee-car">
                     <div className="trv-animated-car">
-                        <img className="car-main" src="images/Left-Car (1).png" alt="#" />
+                        <img className="car-main" src="/images/Left-Car (1).png" alt="#" />
                         <span className="tyre-1">
-                            <img src="images/Left-Car-tyre.png" alt="" className="spin-tyres" />
+                            <img src="/images/Left-Car-tyre.png" alt="" className="spin-tyres" />
                         </span>
                         <span className="tyre-2">
-                            <img src="images/Left-Car-tyre.png" alt="" className="spin-tyres" />
+                            <img src="/images/Left-Car-tyre.png" alt="" className="spin-tyres" />
                         </span>
                     </div>
                 </div>
 
                 <div className="trv-right-tree-pic">
-                    <img src="images/Righttreepic.png" alt="" />
+                    <img src="/images/Righttreepic.png" alt="" />
                 </div>
             </div>
 
@@ -92,9 +93,9 @@ export default function Footer() {
                             <div className="col-xl-3 col-lg-6 col-md-12">
                                 <div className="widget widget_about">
                                     <div className="logo-footer clearfix">
-                                        <a href="index.html">
-                                            <img src="images/ShareLogo.png" alt="" />
-                                        </a>
+                                        <Link to="/">
+                                            <img src="/images/ShareLogo.png" alt="" />
+                                        </Link>
                                     </div>
                                     <p>
                                         SimplyIndiaHolidays is a trusted travel booking agency that
@@ -114,11 +115,11 @@ export default function Footer() {
                                 <div className="widget widget_services">
                                     <h3 className="widget-title">Explore</h3>
                                     <ul>
-                                        <li><a href="about.html">About us</a></li>
-                                        <li><a href="faq.html">FAQ’s</a></li>
-                                        <li><a href="tour.html">Tour</a></li>
-                                        <li><a href="our-team.html">Team</a></li>
-                                        <li><a href="blog-grid.html">News & Articles</a></li>
+                                        <li><Link to="/about">About us</Link></li>
+                                        <li><Link to="/faq">FAQ’s</Link></li>
+                                        <li><Link to="/tour">Tour</Link></li>
+                                        <li><Link to="/our-team">Team</Link></li>
+                                        <li><Link to="/blog-grid">News & Articles</Link></li>
                                     </ul>
                                 </div>
                             </div>
@@ -127,11 +128,11 @@ export default function Footer() {
                                 <div className="widget widget_services">
                                     <h3 className="widget-title">Destinations</h3>
                                     <ul>
-                                        <li><a href="destination-detail.html">Kashmir</a></li>
-                                        <li><a href="tour-detail.html">Rajasthan</a></li>
-                                        <li><a href="tour-detail.html">Uttrakhand</a></li>
-                                        <li><a href="destination-detail.html">Himachal</a></li>
-                                        <li><a href="tour-detail.html">Mathura</a></li>
+                                        <li><Link to="/destination-detail">Kashmir</Link></li>
+                                        <li><Link to="/tour-detail">Rajasthan</Link></li>
+                                        <li><Link to="/tour-detail">Uttrakhand</Link></li>
+                                        <li><Link to="/destination-detail">Himachal</Link></li>
+                                        <li><Link to="/tour-detail">Mathura</Link></li>
                                     </ul>
                                 </div>
                             </div>
@@ -140,11 +141,11 @@ export default function Footer() {
                                 <div className="widget widget_services">
                                     <h3 className="widget-title">Legal</h3>
                                     <ul>
-                                        <li><a href="about.html">Terms & Condition</a></li>
-                                        <li><a href="about.html">Privacy Policy</a></li>
-                                        <li><a href="contact.html">Contact</a></li>
-                                        <li><a href="about.html">Careers</a></li>
-                                        <li><a href="faq.html">Help</a></li>
+                                        <li><Link to="/about">Terms & Condition</Link></li>
+                                        <li><Link to="/about">Privacy Policy</Link></li>
+                                        <li><Link to="/contact">Contact</Link></li>
+                                        <li><Link to="/about">Careers</Link></li>
+                                        <li><Link to="/faq">Help</Link></li>
                                     </ul>
                                 </div>
                             </div>
