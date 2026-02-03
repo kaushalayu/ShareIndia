@@ -2002,7 +2002,7 @@ const Home = () => {
                     </li>
                   </ul>
                 </div>
-                <Link to="/service-detail" className="site-button butn-bg-shape">
+                <Link to="#" className="site-button butn-bg-shape">
                   Discover More
                 </Link>
               </div>
@@ -2580,7 +2580,7 @@ const Home = () => {
                       </div>
                       <div className="trv-info">
                         <h4 className="trv-title">
-                          <Link to="/service-detail">{service.title}</Link>
+                          <Link to="#">{service.title}</Link>
                         </h4>
                       </div>
                     </div>
@@ -2608,7 +2608,7 @@ const Home = () => {
         >
           <div className="circle-text2">
             <div className="emblem-wrap">
-              <div className="emblem" data-text="Want-to-see-our-top-destinations-">Want-to-see-our-top-destinations-</div>
+              <div className="emblem" data-text=""></div>
               <i>
                 <img src="/images/advanture-st1.png" alt="In Circle Pic" />
               </i>

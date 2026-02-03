@@ -140,9 +140,9 @@ export default function BlogDetail() {
                         <div className="s-post-tags">
                           <h3 className="twm-title">Tags</h3>
                           <div className="tagcloud">
-                            <Link to="/services">Food</Link>
-                            <Link to="/services">Tour</Link>
-                            <Link to="/services">Pool</Link>
+                            <Link to="#s">Food</Link>
+                            <Link to="#s">Tour</Link>
+                            <Link to="#s">Pool</Link>
                           </div>
                         </div>
 

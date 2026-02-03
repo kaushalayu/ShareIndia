@@ -218,7 +218,7 @@ export default function Tour() {
           <div className="circle-text2">
             <div className="emblem-wrap">
               <div className="emblem">
-                Want-to-see-our-top-destinations-
+
               </div>
               <i>
                 <img

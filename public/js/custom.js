@@ -1003,88 +1003,67 @@ All JavaScript fuctions Start
 			return;
 		}
 
-		// Function to initialize sliders
-		function initTestimonialSliders() {
-			// Check if already initialized
-			if ($('.testimonial-thum-sld').hasClass('swiper-initialized')) {
-				return;
-			}
-
-			// Initialize thumbnail slider
-			var swiper = new Swiper(".testimonial-thum-sld", {
-				centeredSlides: true,
-				centeredSlidesBounds: true,
-				slidesPerView: 3,
-				watchOverflow: true,
-				watchSlidesVisibility: true,
-				watchSlidesProgress: true,
-				direction: 'vertical',
-				loop: true,
-				navigation: {
-					nextEl: ".swiper-button-next",
-					prevEl: ".swiper-button-prev"
-				},
-				autoplay: {
-					delay: 2500,
-					disableOnInteraction: false
-				},
-				breakpoints: {
-					0: {
-						direction: 'horizontal',
-					},
-					1200: {
-						direction: 'vertical',
-					}
-				},
-			});
-
-			// Initialize content slider with delay to ensure proper initialization
-			setTimeout(function() {
-				var swiper2 = new Swiper(".testimonial-content-sld", {
-					loop: true,
-					watchOverflow: true,
-					watchSlidesVisibility: true,
-					watchSlidesProgress: true,
-					preventInteractionOnTransition: true,
-					navigation: {
-						nextEl: '.swiper-button-next',
-						prevEl: '.swiper-button-prev',
-					},
-					effect: 'fade',
-					fadeEffect: {
-						crossFade: true
-					},
-					thumbs: {
-						swiper: swiper
-					},
-					autoplay: {
-						delay: 2500,
-						disableOnInteraction: false
-					},
-				});
-			}, 100);
+		// Destroy existing instances if they exist
+		if ($('.testimonial-thum-sld')[0] && $('.testimonial-thum-sld')[0].swiper) {
+			$('.testimonial-thum-sld')[0].swiper.destroy(true, true);
+		}
+		if ($('.testimonial-content-sld')[0] && $('.testimonial-content-sld')[0].swiper) {
+			$('.testimonial-content-sld')[0].swiper.destroy(true, true);
 		}
 
-		// Try immediate initialization first
-		initTestimonialSliders();
-
-		// Also initialize when testimonial section comes into view (for Home page)
-		var testimonialSection = $('.trv-testimonial-st2-wrap');
-		if (testimonialSection.length) {
-			$(window).on('scroll', function() {
-				if (!testimonialSection.hasClass('swiper-initialized')) {
-					var scrollTop = $(window).scrollTop();
-					var elementTop = testimonialSection.offset().top;
-					var windowHeight = $(window).height();
-					
-					// Initialize when testimonial section is in viewport
-					if (scrollTop + windowHeight > elementTop + 200) {
-						initTestimonialSliders();
-						testimonialSection.addClass('swiper-initialized');
-					}
+		// Initialize thumbnail slider
+		var swiperThumbs = new Swiper(".testimonial-thum-sld", {
+			centeredSlides: true,
+			centeredSlidesBounds: true,
+			slidesPerView: 3,
+			watchOverflow: true,
+			watchSlidesVisibility: true,
+			watchSlidesProgress: true,
+			direction: 'vertical',
+			loop: true,
+			navigation: {
+				nextEl: ".swiper-button-next",
+				prevEl: ".swiper-button-prev"
+			},
+			autoplay: {
+				delay: 2500,
+				disableOnInteraction: false
+			},
+			breakpoints: {
+				0: {
+					direction: 'horizontal',
+					slidesPerView: 3,
+				},
+				1200: {
+					direction: 'vertical',
+					slidesPerView: 3,
 				}
-			});
-		}
+			},
+		});
+
+		// Initialize content slider
+		var swiperContent = new Swiper(".testimonial-content-sld", {
+			loop: true,
+			watchOverflow: true,
+			watchSlidesVisibility: true,
+			watchSlidesProgress: true,
+			preventInteractionOnTransition: true,
+			navigation: {
+				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev',
+			},
+			effect: 'fade',
+			fadeEffect: {
+				crossFade: true
+			},
+			thumbs: {
+				swiper: swiperThumbs
+			},
+			autoplay: {
+				delay: 2500,
+				disableOnInteraction: false
+			},
+		});
 	}
 
 	//  Cursor Section Start function by = gsap.min.js **********//
@@ -1457,19 +1436,19 @@ All JavaScript fuctions Start
 		// Additional initialization for testimonial sliders
 		// Retry initialization a few times to ensure elements are ready
 		var testimonialRetryCount = 0;
-		var testimonialMaxRetries = 5;
+		var testimonialMaxRetries = 10;
 		
 		function initTestimonialWithRetry() {
 			if ($('.testimonial-thum-sld').length && $('.testimonial-content-sld').length) {
 				trv_testi_slider();
 			} else if (testimonialRetryCount < testimonialMaxRetries) {
 				testimonialRetryCount++;
-				setTimeout(initTestimonialWithRetry, 1000);
+				setTimeout(initTestimonialWithRetry, 500);
 			}
 		}
 		
 		// Start retry mechanism
-		setTimeout(initTestimonialWithRetry, 500);
+		setTimeout(initTestimonialWithRetry, 100);
 	});
 
 	/*--------------------------------------------------------------------------------------------
@@ -1483,11 +1462,10 @@ All JavaScript fuctions Start
 
 		// Final attempt to initialize testimonial sliders after page load
 		setTimeout(function() {
-			if ($('.testimonial-thum-sld').length && $('.testimonial-content-sld').length && 
-				!$('.testimonial-thum-sld').hasClass('swiper-initialized')) {
+			if ($('.testimonial-thum-sld').length && $('.testimonial-content-sld').length) {
 				trv_testi_slider();
 			}
-		}, 1000);
+		}, 500);
 
 	});
 
