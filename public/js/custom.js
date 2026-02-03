@@ -998,58 +998,93 @@ All JavaScript fuctions Start
 
 	// > Testimonial Thumb SLider Full Screen with no margin function by = swiper-bundle.min.js ========================== //
 	function trv_testi_slider() {
+		// Check if testimonial elements exist on page
+		if (!$('.testimonial-thum-sld').length || !$('.testimonial-content-sld').length) {
+			return;
+		}
 
-		var swiper = new Swiper(".testimonial-thum-sld", {
-			centeredSlides: true,
-			centeredSlidesBounds: true,
-			slidesPerView: 3,
-			watchOverflow: true,
-			watchSlidesVisibility: true,
-			watchSlidesProgress: true,
-			direction: 'vertical',
-			loop: true,
-			navigation: {
-				nextEl: ".swiper-button-next",
-				prevEl: ".swiper-button-prev"
-			},
-			autoplay: {
-				delay: 2500,
-				disableOnInteraction: false
-			},
-			breakpoints: {
-				0: {
-					direction: 'horizontal',
+		// Function to initialize sliders
+		function initTestimonialSliders() {
+			// Check if already initialized
+			if ($('.testimonial-thum-sld').hasClass('swiper-initialized')) {
+				return;
+			}
+
+			// Initialize thumbnail slider
+			var swiper = new Swiper(".testimonial-thum-sld", {
+				centeredSlides: true,
+				centeredSlidesBounds: true,
+				slidesPerView: 3,
+				watchOverflow: true,
+				watchSlidesVisibility: true,
+				watchSlidesProgress: true,
+				direction: 'vertical',
+				loop: true,
+				navigation: {
+					nextEl: ".swiper-button-next",
+					prevEl: ".swiper-button-prev"
 				},
-				1200: {
-					direction: 'vertical',
+				autoplay: {
+					delay: 2500,
+					disableOnInteraction: false
+				},
+				breakpoints: {
+					0: {
+						direction: 'horizontal',
+					},
+					1200: {
+						direction: 'vertical',
+					}
+				},
+			});
+
+			// Initialize content slider with delay to ensure proper initialization
+			setTimeout(function() {
+				var swiper2 = new Swiper(".testimonial-content-sld", {
+					loop: true,
+					watchOverflow: true,
+					watchSlidesVisibility: true,
+					watchSlidesProgress: true,
+					preventInteractionOnTransition: true,
+					navigation: {
+						nextEl: '.swiper-button-next',
+						prevEl: '.swiper-button-prev',
+					},
+					effect: 'fade',
+					fadeEffect: {
+						crossFade: true
+					},
+					thumbs: {
+						swiper: swiper
+					},
+					autoplay: {
+						delay: 2500,
+						disableOnInteraction: false
+					},
+				});
+			}, 100);
+		}
+
+		// Try immediate initialization first
+		initTestimonialSliders();
+
+		// Also initialize when testimonial section comes into view (for Home page)
+		var testimonialSection = $('.trv-testimonial-st2-wrap');
+		if (testimonialSection.length) {
+			$(window).on('scroll', function() {
+				if (!testimonialSection.hasClass('swiper-initialized')) {
+					var scrollTop = $(window).scrollTop();
+					var elementTop = testimonialSection.offset().top;
+					var windowHeight = $(window).height();
+					
+					// Initialize when testimonial section is in viewport
+					if (scrollTop + windowHeight > elementTop + 200) {
+						initTestimonialSliders();
+						testimonialSection.addClass('swiper-initialized');
+					}
 				}
-			},
-
-
-		});
-		var swiper2 = new Swiper(".testimonial-content-sld", {
-			loop: true,
-			watchOverflow: true,
-			watchSlidesVisibility: true,
-			watchSlidesProgress: true,
-			preventInteractionOnTransition: true,
-			navigation: {
-				nextEl: '.swiper-button-next',
-				prevEl: '.swiper-button-prev',
-			},
-			effect: 'fade',
-			fadeEffect: {
-				crossFade: true
-			},
-			thumbs: {
-				swiper: swiper
-			},
-			autoplay: {
-				delay: 2500,
-				disableOnInteraction: false
-			},
-
-		});
+			});
+		}
 	}
 
 	//  Cursor Section Start function by = gsap.min.js **********//
@@ -1418,6 +1453,23 @@ All JavaScript fuctions Start
 
 	jQuery(document).ready(function () {
 		window.shareIndiaInit();
+		
+		// Additional initialization for testimonial sliders
+		// Retry initialization a few times to ensure elements are ready
+		var testimonialRetryCount = 0;
+		var testimonialMaxRetries = 5;
+		
+		function initTestimonialWithRetry() {
+			if ($('.testimonial-thum-sld').length && $('.testimonial-content-sld').length) {
+				trv_testi_slider();
+			} else if (testimonialRetryCount < testimonialMaxRetries) {
+				testimonialRetryCount++;
+				setTimeout(initTestimonialWithRetry, 1000);
+			}
+		}
+		
+		// Start retry mechanism
+		setTimeout(initTestimonialWithRetry, 500);
 	});
 
 	/*--------------------------------------------------------------------------------------------
@@ -1428,6 +1480,14 @@ All JavaScript fuctions Start
 		masonryBox(),
 			// > page loader function by = custom.js		
 			page_loader();
+
+		// Final attempt to initialize testimonial sliders after page load
+		setTimeout(function() {
+			if ($('.testimonial-thum-sld').length && $('.testimonial-content-sld').length && 
+				!$('.testimonial-thum-sld').hasClass('swiper-initialized')) {
+				trv_testi_slider();
+			}
+		}, 1000);
 
 	});
 
