@@ -4,96 +4,126 @@ import { Link } from "react-router-dom";
 import "../styles/auth.css";
 
 const Signup = () => {
-    const [isLogin, setIsLogin] = useState(true);
+    const [mode, setMode] = useState("login"); // login | signup | forgot | otp
+
     return (
         <div className="page-wraper">
             {/* CONTENT START */}
             <div className="page-content">
+
                 {/* INNER PAGE BANNER */}
                 <div className="wt-bnr-inr overlay-wraper bg-center">
                     <div className="overlay-main innr-bnr-olay"></div>
+
                     <div className="wt-bnr-inr-entry">
                         <div className="banner-title-outer">
                             <div className="banner-title-name">
-                                <h2 className="wt-title">Signup/Login</h2>
+                                <h2 className="wt-title">Signup / Login</h2>
                             </div>
-                            {/* BREADCRUMB ROW */}
-                            <div>
-                                <ul className="wt-breadcrumb breadcrumb-style-2">
-                                    <li>
-                                        <Link to="/">Home</Link>
-                                    </li>
-                                    <li>Signup/Login</li>
-                                </ul>
-                            </div>
+
+                            <ul className="wt-breadcrumb breadcrumb-style-2">
+                                <li><Link to="/">Home</Link></li>
+                                <li>Signup / Login</li>
+                            </ul>
                         </div>
-                        {/* BREADCRUMB ROW END */}
-                    </div>
-                    <div className="trv-inr-bnr-cloud">
-                        <div className="marquee">
-                            <img src="images/inr-banner-cloud.png" alt="Image" />
-                        </div>
-                    </div>
-                    <div className="trv-inr-bnr-plane">
-                        <div className="trv-inr-bnr-plane-bx">
-                            <img src="images/airplane.png" alt="Image" />
-                        </div>
-                    </div>
-                    <div className="trv-inr-bnr-bloon-1">
-                        <img src="images/hotballon-Left.png" alt="Image" />
-                    </div>
-                    <div className="trv-inr-bnr-bloon-2">
-                        <img src="images/hotballon-right.png" alt="Image" />
                     </div>
                 </div>
                 {/* INNER PAGE BANNER END */}
-                <section className="auth-section">
-                    <div className="auth-card">
 
-                        <h3 className="auth-title">
-                            {isLogin ? "Welcome Back 👋" : "Create Your Account 🚀"}
-                        </h3>
+                {/* AUTH SECTION */}
+                <section className="soft-auth-wrap">
+                    <div className="soft-auth-card">
 
-                        <p className="auth-subtitle">
-                            {isLogin
-                                ? "Login to continue your journey with us"
-                                : "Sign up and start planning your trips"}
+                        <h2 className="soft-title">
+                            Reach & Get in <span>Touch</span> With Us!
+                        </h2>
+
+                        <p className="soft-subtitle">
+                            We’d love to hear from you. Our friendly team is always here to chat
                         </p>
 
-                        <form className="auth-form">
-                            {!isLogin && (
-                                <input type="text" placeholder="Full Name" />
-                            )}
+                        {/* LOGIN */}
+                        {mode === "login" && (
+                            <>
+                                <input className="soft-input" placeholder="Enter Email Address" />
+                                <input
+                                    className="soft-input"
+                                    type="password"
+                                    placeholder="Password"
+                                />
 
-                            <input type="email" placeholder="Email Address" />
-                            <input type="password" placeholder="Password" />
+                                <button className="soft-btn">Login</button>
 
-                            {!isLogin && (
-                                <input type="password" placeholder="Confirm Password" />
-                            )}
+                                <div className="soft-links">
+                                    <span onClick={() => setMode("forgot")}>
+                                        Forgot Password?
+                                    </span>
+                                    <span onClick={() => setMode("signup")}>
+                                        Create Account
+                                    </span>
+                                </div>
+                            </>
+                        )}
 
-                            <button type="submit" className="site-button butn-bg-shape auth-btn">
-                                {isLogin ? "Login" : "Create Account"}
-                            </button>
-                        </form>
+                        {/* SIGNUP */}
+                        {mode === "signup" && (
+                            <>
+                                <input className="soft-input" placeholder="Enter Your Name" />
+                                <input className="soft-input" placeholder="Enter Email Address" />
+                                <input
+                                    className="soft-input"
+                                    type="password"
+                                    placeholder="Password"
+                                />
 
-                        <div className="auth-switch">
-                            {isLogin ? (
-                                <p>
-                                    Don’t have an account?
-                                    <span onClick={() => setIsLogin(false)}> Sign up</span>
-                                </p>
-                            ) : (
-                                <p>
-                                    Already have an account?
-                                    <span onClick={() => setIsLogin(true)}> Login</span>
-                                </p>
-                            )}
-                        </div>
+                                <button className="soft-btn">Create Account</button>
+
+                                <div className="soft-links center">
+                                    <span onClick={() => setMode("login")}>
+                                        Already have an account?
+                                    </span>
+                                </div>
+                            </>
+                        )}
+
+                        {/* FORGOT PASSWORD */}
+                        {mode === "forgot" && (
+                            <>
+                                <input className="soft-input" placeholder="Enter Email Address" />
+
+                                <button
+                                    className="soft-btn"
+                                    onClick={() => setMode("otp")}
+                                >
+                                    Send OTP
+                                </button>
+
+                                <div className="soft-links center">
+                                    <span onClick={() => setMode("login")}>
+                                        Back to Login
+                                    </span>
+                                </div>
+                            </>
+                        )}
+
+                        {/* OTP */}
+                        {mode === "otp" && (
+                            <>
+                                <input className="soft-input" placeholder="Enter OTP" />
+
+                                <button className="soft-btn">Verify OTP</button>
+
+                                <div className="soft-links center">
+                                    <span onClick={() => setMode("login")}>
+                                        Back to Login
+                                    </span>
+                                </div>
+                            </>
+                        )}
 
                     </div>
                 </section>
-
+                {/* AUTH SECTION END */}
 
                 <ScrollToTop />
             </div>
