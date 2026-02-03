@@ -3,7 +3,7 @@ import './App.css'
 import Navbar from "./Components/Navbar";
 import ScrollToTop from "./Components/ScrollToTop";
 import Loader from "./Components/Loader";
-import Footer from "./Components/Footer";
+import Footer from "./Components/footer";
 import { Routes, Route, useLocation } from 'react-router-dom'
 
 // Lazy loading pages
