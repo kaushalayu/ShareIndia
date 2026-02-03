@@ -1,7 +1,28 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
+    useEffect(() => {
+        // Bootstrap collapse functionality fix
+        const toggleButton = document.getElementById('mobile-side-drawer');
+        const targetMenu = document.querySelector('.header-nav');
+        
+        // Button click handler
+        if (toggleButton && targetMenu) {
+            toggleButton.addEventListener('click', () => {
+                targetMenu.classList.toggle('show');
+            });
+        }
+        
+        // Auto close on link click
+        const navLinks = document.querySelectorAll('.header-nav .navbar-nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                targetMenu.classList.remove('show');
+            });
+        });
+    }, []);
+
     return (
         <>
             {/* HEADER START */}
@@ -33,7 +54,7 @@ const Navbar = () => {
                         {/* MAIN Vav */}
                         <div className="nav-animation header-nav navbar-collapse collapse d-flex justify-content-end">
                             <ul className="nav navbar-nav">
-                                <li className="has-child">
+                                <li>
                                     <Link to="/">Home</Link>
                                 </li>
                                 <li>
@@ -42,13 +63,13 @@ const Navbar = () => {
                                 <li>
                                     <Link to="/gallery">Gallery</Link>
                                 </li>
-                                <li className="has-child">
+                                <li>
                                     <Link to="/offer">Offer</Link>
                                 </li>
-                                <li className="has-child">
+                                <li>
                                     <Link to="/tour">Tours</Link>
                                 </li>
-                                <li className="has-child">
+                                <li>
                                     <Link to="/blog-grid">Blogs</Link>
                                 </li>
                                 <li>

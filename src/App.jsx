@@ -1,9 +1,9 @@
 import { useState, Suspense, lazy, useEffect } from 'react'
 import './App.css'
-import Navbar from './Components/Navbar'
-import Footer from './Components/Footer'
-import ScrollToTop from './Components/ScrollToTop'
-import Loader from './Components/Loader'
+import Navbar from "./Components/Navbar";
+import Footer from "./Components/Footer";
+import ScrollToTop from "./Components/ScrollToTop";
+import Loader from "./Components/Loader";
 import { Routes, Route, useLocation } from 'react-router-dom'
 
 // Lazy loading pages
