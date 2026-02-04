@@ -1,6 +1,7 @@
 import React from "react";
 import ScrollToTop from "../Components/ScrollToTop";
 import { Link } from "react-router-dom";
+import AnimatedSection from "../Components/AnimatedSection";
 
 const About = () => {
   return (
@@ -8,7 +9,8 @@ const About = () => {
       {/* CONTENT START */}
       <div className="page-content">
         {/* INNER PAGE BANNER */}
-        <div className="wt-bnr-inr overlay-wraper bg-center">
+        <AnimatedSection variant="fadeInDown">
+          <div className="wt-bnr-inr overlay-wraper bg-center">
           <div className="overlay-main innr-bnr-olay"></div>
           <div className="wt-bnr-inr-entry">
             <div className="banner-title-outer">
@@ -43,11 +45,13 @@ const About = () => {
           <div className="trv-inr-bnr-bloon-2">
             <img src="images/hotballon-right.png" alt="Image" />
           </div>
-        </div>
+          </div>
+        </AnimatedSection>
         {/* INNER PAGE BANNER END */}
 
         {/*WE RECOMMEND SECTION START*/}
-        <div className="section-full p-t120 p-b0 trv-we-recommend">
+        <AnimatedSection variant="fadeInLeft" delay={0.2}>
+          <div className="section-full p-t120 p-b0 trv-we-recommend">
           <div className="container">
             <div className="section-content">
               <div className="trv-we-recommend-row">
@@ -172,7 +176,8 @@ const About = () => {
               </div>
             </div>
           </div>
-        </div>
+          </div>
+        </AnimatedSection>
         {/*WE RECOMMEND SECTION END*/}
 
         {/*MOST FAVORITE TOUR PLACE SECTION START*/}
@@ -348,7 +353,8 @@ const About = () => {
         </div>
         {/*MOST FAVORITE TOUR PLACE SECTION END*/}
         {/* WE OFFER SERVICES SECTION START */}
-        <div className="section-full trv-we-off-service p-t120 p-b90">
+        <AnimatedSection variant="fadeInRight" delay={0.1}>
+          <div className="section-full trv-we-off-service p-t120 p-b90">
           <div className="container">
             <div className="trv-we-off-sevice-row">
               <div className="row">
@@ -483,10 +489,12 @@ const About = () => {
           <div className="trv-right-sm-plane">
             <img src="/images/Right-top-plane.png" alt="Image" />
           </div>
-        </div>
+          </div>
+        </AnimatedSection>
         {/* WE OFFER SERVICES SECTION END */}
         {/* TESTIMONIAL SECTION START */}
-        <div className="section-full trv-testimonial-st2-wrap tvr-hot-ballon-wrap">
+        <AnimatedSection variant="fadeInUp" delay={0.3}>
+          <div className="section-full trv-testimonial-st2-wrap tvr-hot-ballon-wrap">
           <div className="container">
             {/* TITLE START */}
             <div className="section-head trv-head-title-wrap center-position">
@@ -724,7 +732,8 @@ const About = () => {
           <div className="right-hot-ballon">
             <img src="/images/hotballon-right.png" alt="image" />
           </div>
-        </div>
+          </div>
+        </AnimatedSection>
         {/* TESTIMONIAL SECTION END */}
         <ScrollToTop />
       </div>

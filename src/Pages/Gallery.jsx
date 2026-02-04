@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import ScrollToTop from "../Components/ScrollToTop";
+import AnimatedSection from "../Components/AnimatedSection";
+import { motion } from "framer-motion";
 
 export default function Gallery() {
   return (
@@ -8,7 +10,8 @@ export default function Gallery() {
       {/* CONTENT START */}
       <div className="page-content">
         {/* INNER PAGE BANNER */}
-        <div className="wt-bnr-inr overlay-wraper bg-center">
+        <AnimatedSection variant="fadeInDown">
+          <div className="wt-bnr-inr overlay-wraper bg-center">
           <div className="overlay-main innr-bnr-olay"></div>
 
           <div className="wt-bnr-inr-entry">
@@ -48,11 +51,13 @@ export default function Gallery() {
           <div className="trv-inr-bnr-bloon-2">
             <img src="/images/hotballon-right.png" alt="Image" />
           </div>
-        </div>
+          </div>
+        </AnimatedSection>
         {/* INNER PAGE BANNER END */}
 
         {/* GALLERY SECTION START */}
-        <div className="section-full trv-gallery-wrap p-t120 p-b90">
+        <AnimatedSection variant="fadeInUp" delay={0.2}>
+          <div className="section-full trv-gallery-wrap p-t120 p-b90">
           <div className="container">
 
             {/* TITLE */}
@@ -192,7 +197,8 @@ export default function Gallery() {
             </div>
 
           </div>
-        </div>
+          </div>
+        </AnimatedSection>
         {/* GALLERY SECTION END */}
         {/* POPULAR DESTINATION SECTION START */}
         <div

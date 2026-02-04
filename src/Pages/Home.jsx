@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import ScrollToTop from "../Components/ScrollToTop";
 import { Link } from "react-router-dom";
+import AnimatedSection from "../Components/AnimatedSection";
+import { motion } from "framer-motion";
 
 const Home = () => {
   const [formData, setFormData] = useState({
@@ -24,7 +26,12 @@ const Home = () => {
       {/* CONTENT START */}
       <div className="page-content">
         {/* Banner Style One */}
-        <div className="trv-banner-1-wrap">
+        <motion.div 
+          className="trv-banner-1-wrap"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.2 }}
+        >
           <div className="trv-banner-1-rain-effect">
             <div className="rain front-row"></div>
             <div className="rain back-row"></div>
@@ -138,11 +145,12 @@ const Home = () => {
               <img src="/images/cloud-2.png" alt="Image" />
             </div>
           </div>
-        </div>
+        </motion.div>
         {/* Banner Style One End */}
 
         {/* SEARCH BAR START */}
-        <div className="trv-search-st1-wrap">
+        <AnimatedSection variant="fadeInUp" delay={0.2}>
+          <div className="trv-search-st1-wrap">
           <div className="trv-search-st1">
             <div className="trv-search-st1-bg">
               <form>
@@ -257,7 +265,8 @@ const Home = () => {
               </form>
             </div>
           </div>
-        </div>
+          </div>
+        </AnimatedSection>
         {/* SEARCH BAR END */}
         {/* POPULAR DESTINATION SECTION START */}
         <div

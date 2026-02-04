@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from "react-router-dom";
 import ScrollToTop from '../Components/ScrollToTop';
+import AnimatedSection from '../Components/AnimatedSection';
 
 
 function Contact() {
@@ -44,7 +45,8 @@ function Contact() {
         <div className="page-content">
 
           {/* INNER PAGE BANNER */}
-          <div className="wt-bnr-inr overlay-wraper bg-center">
+          <AnimatedSection variant="fadeInDown">
+            <div className="wt-bnr-inr overlay-wraper bg-center">
             <div className="overlay-main innr-bnr-olay"></div>
 
             <div className="wt-bnr-inr-entry">
@@ -80,11 +82,13 @@ function Contact() {
             <div className="trv-inr-bnr-bloon-2">
               <img src="/images/hotballon-right.png" alt="Image" />
             </div>
-          </div>
+            </div>
+          </AnimatedSection>
           {/* INNER PAGE BANNER END */}
 
           {/* CONTACT US SECTION */}
-          <div className="trv-contact-us-wrap">
+          <AnimatedSection variant="fadeInUp" delay={0.3}>
+            <div className="trv-contact-us-wrap">
             <div className="trv-contact-us-mid">
 
               {/* GOOGLE MAP */}
@@ -255,6 +259,7 @@ function Contact() {
 
             </div>
           </div>
+        </AnimatedSection>
           {/* CONTACT END */}
           <ScrollToTop />
         </div>

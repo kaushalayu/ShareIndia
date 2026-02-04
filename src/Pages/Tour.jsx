@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import ScrollToTop from "../Components/ScrollToTop";
+import AnimatedSection from "../Components/AnimatedSection";
 
 export default function Tour() {
   return (
@@ -9,7 +10,8 @@ export default function Tour() {
       <div className="page-content">
 
         {/* INNER PAGE BANNER */}
-        <div className="wt-bnr-inr overlay-wraper bg-center">
+        <AnimatedSection variant="fadeInDown">
+          <div className="wt-bnr-inr overlay-wraper bg-center">
           <div className="overlay-main innr-bnr-olay"></div>
 
           <div className="wt-bnr-inr-entry">
@@ -49,11 +51,13 @@ export default function Tour() {
           <div className="trv-inr-bnr-bloon-2">
             <img src="/images/hotballon-right.png" alt="Image" />
           </div>
-        </div>
+          </div>
+        </AnimatedSection>
         {/* INNER PAGE BANNER END */}
 
         {/* POPULAR TOURS */}
-        <div className="section-full trv-popular-tours p-t120">
+        <AnimatedSection variant="fadeInUp" delay={0.2}>
+          <div className="section-full trv-popular-tours p-t120">
           <div className="container-fluid">
 
             <div className="section-head trv-head-title-wrap center-position">
@@ -204,7 +208,8 @@ export default function Tour() {
               </div>
             </div>
           </div>
-        </div>
+          </div>
+        </AnimatedSection>
         {/* POPULAR TOURS END */}
 
         {/* ADVENTURE SECTION */}
